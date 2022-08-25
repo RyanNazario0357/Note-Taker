@@ -1,0 +1,27 @@
+html,
+body {
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.save-note {
+    display: none;
+}
+
+.icons i {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 2.0rem;
+    cursor: alias;
+}
+
+.note-textarea,
+.note-title {
+    color: black;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
