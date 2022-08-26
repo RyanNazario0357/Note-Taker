@@ -54,3 +54,17 @@ var handleNoteSave = function() {
     getAndRenderNotes();
     renderActiveNote();
 };
+
+var handleNoteDelete = function(event) {
+    event.stopPropagation();
+
+    var note = $(this).data('id');
+
+    if (activeNote.id === note) {
+        activeNote = {};
+    }
+
+    deleteNote(note);
+    getAndRenderNotes();
+    renderActiveNote();
+};
