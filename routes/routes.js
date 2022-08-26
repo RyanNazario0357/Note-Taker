@@ -30,5 +30,12 @@ module.exports = app => {
         console.log("Deleted note with id"+req.params.id);
     });
 
+//View Routes
+
+//Display notes.html
+app.get('/notes', function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
 
 }
