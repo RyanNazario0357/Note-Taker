@@ -80,7 +80,7 @@ var handleNewNoteView = function() {
 };
 
 var handleRenderSaveBtn = function() {
-    if (!$noteTitle.val().trim() || !%$noteText.val().trim()) {
+    if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
         $saveNoteBtn.hide();
     } else {
         $saveNoteBtn.show();
@@ -95,7 +95,7 @@ var renderNoteList = function(notes) {
     for (var i = 0; i < notes.length; i++) {
         var note = notes[i];
 
-        var $li = $("<li class='list-group-item'>".data(note);
+        var $li = $("<li class='list-group-item'>").data(note);
         $li.data('id',i);
 
         var $span = $("<span>").text(note.title);
@@ -103,6 +103,9 @@ var renderNoteList = function(notes) {
             "<i class='fas fa-trash-alt float-right text-danger delete-note' data-id="+i+">"
         );
 
-        
+        $li.append($span, $delBtn);
+        noteListItems.push($li);
     }
-}
+
+    $noteList.append(noteListItems);
+};
