@@ -68,3 +68,8 @@ var handleNoteDelete = function(event) {
     getAndRenderNotes();
     renderActiveNote();
 };
+
+var handleNoteView = function() {
+    activeNote = $(this).data();
+    renderActiveNote();
+};
