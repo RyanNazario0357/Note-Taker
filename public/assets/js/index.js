@@ -73,3 +73,9 @@ var handleNoteView = function() {
     activeNote = $(this).data();
     renderActiveNote();
 };
+
+var handleNewNoteView = function() {
+    activeNote = {};
+    renderActiveNote();
+};
+
