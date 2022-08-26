@@ -11,7 +11,7 @@ module.exports = app => {
     app.get("/api/notes", function(req, res) {
         res.json(notes);
     });
-//steup post route
+//setup post route
     app.post("/api/notes", function(req, res) {
         let newNote = req.body;
         notes.push(newNote);
@@ -19,5 +19,16 @@ module.exports = app => {
         return console.log("added new note: "+newNote.title);
     });
 
-    
+//Retrieve Note
+    app.get("/api/notes/:id", function(req, res) {
+        res.json(notes[req.params.id]);
+    });
+//Deletes note
+    app.get("/api/notes/:id", function(req, res) {
+        notes.splice(req.params.id, 1);
+        updateDb();
+        console.log("Deleted note with id"+req.params.id);
+    });
+
+
 }
