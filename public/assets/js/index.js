@@ -21,9 +21,25 @@ var saveNote = function(note) {
     });
 };
 
-var deletNote = function(id) {
+var deleteNote = function(id) {
     return $.ajax({
         url: "api/notes/" + id,
         method: "DELETE"
     });
+};
+
+var renderActiveNote = function() {
+    $saveNoteBtn.hide();
+
+    if (typeof activeNote.id === "number") {
+        $noteTitle.attr("readonly", true);
+        $noteText.attr("readonly", true);
+        $noteTitle.val(activeNote.title);
+        $noteText.val(activeNote.text);
+    } else {
+        $noteTitle.attr("readonly", false);
+        $noteText.attr("readonly", false);
+        $noteTitle.val("");
+        $noteText.val("");
+    }
 };
