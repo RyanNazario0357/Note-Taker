@@ -13,3 +13,11 @@ var getNotes = function() {
     });
 };
 
+var saveNote = function(note) {
+    return $.ajax({
+        url: "/api/notes",
+        data: note,
+        method: "POST"
+    });
+};
+
