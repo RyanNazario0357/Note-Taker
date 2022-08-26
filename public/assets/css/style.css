@@ -25,3 +25,27 @@ body {
     border: none;
 }
 
+.note-textarea {
+    resize: none;
+    height: calc(100% - 60px);
+    padding-top: 12px;
+}
+
+.note-title {
+    height: 45px;
+    margin-top: 10px;
+    font-size: 3rem;
+}
+
+.note-title:read-only,
+.note-textarea:read-only {
+    color: aqua;
+}
+
+.list-container .card {
+    height: calc(100vh - 60px);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+}
+
