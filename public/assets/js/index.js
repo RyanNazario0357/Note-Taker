@@ -21,3 +21,9 @@ var saveNote = function(note) {
     });
 };
 
+var deletNote = function(id) {
+    return $.ajax({
+        url: "api/notes/" + id,
+        method: "DELETE"
+    });
+};
