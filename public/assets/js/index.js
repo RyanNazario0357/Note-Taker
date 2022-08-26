@@ -87,3 +87,22 @@ var handleRenderSaveBtn = function() {
     }
 };
 
+var renderNoteList = function(notes) {
+    $noteList.empty();
+
+    var noteListItems = [];
+
+    for (var i = 0; i < notes.length; i++) {
+        var note = notes[i];
+
+        var $li = $("<li class='list-group-item'>".data(note);
+        $li.data('id',i);
+
+        var $span = $("<span>").text(note.title);
+        var $delBtn = $(
+            "<i class='fas fa-trash-alt float-right text-danger delete-note' data-id="+i+">"
+        );
+
+        
+    }
+}
