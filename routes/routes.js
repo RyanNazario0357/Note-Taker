@@ -42,5 +42,11 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-
+//update json file when note is added
+function updateDb() {
+    fs.writeFile("./db/db.json",JSON.stringify(notes,'\t'),err => {
+        if (err) throw err;
+        return true;
+    });
+}
 }
