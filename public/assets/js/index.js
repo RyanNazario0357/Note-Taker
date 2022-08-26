@@ -43,3 +43,14 @@ var renderActiveNote = function() {
         $noteText.val("");
     }
 };
+
+var handleNoteSave = function() {
+    var newNote = {
+        title: $noteTitle.val(),
+        text: $noteText.val()
+    };
+
+    saveNote(newNote);
+    getAndRenderNotes();
+    renderActiveNote();
+};
