@@ -109,3 +109,10 @@ var renderNoteList = function(notes) {
 
     $noteList.append(noteListItems);
 };
+
+var getAndRenderNotes = function() {
+    return getNotes().then(function(data) {
+        renderNoteList(data);
+    });
+};
+
