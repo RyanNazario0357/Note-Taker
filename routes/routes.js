@@ -5,7 +5,7 @@ module.exports = app => {
 
     fs.readFile("./db/db.json","utf8", (err, data) => {
         if (err) throw err;
-        var notyes = JSON.partse(data);
+        var notes = JSON.parse(data);
     });
 //get api route
     app.get("/api/notes", function(req, res) {
@@ -27,14 +27,14 @@ module.exports = app => {
     app.get("/api/notes/:id", function(req, res) {
         notes.splice(req.params.id, 1);
         updateDb();
-        console.log("Deleted note with id"+req.params.id);
+        console.log("Deleted note with id "+req.params.id);
     });
 
 //View Routes
 
 //Display notes.html
 app.get('/notes', function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, "../public/notes.html"));
 });
 
 //display index.html

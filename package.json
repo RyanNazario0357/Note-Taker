@@ -10,12 +10,12 @@
 
 "repository": {
     "type": "git",
-    "url": "https://github.com/RyanNazario0357/Note-Taker"
+    "url": "git+https://github.com/RyanNazario0357/Note-Taker.git"
 },
 
 "keywords": [],
 "author": {},
-"license": "",
+"license": "ISC",
 "bugs": {
     "url": "https://github.com/RyanNazario0357/Note-Taker/issues"
 },
