@@ -27,7 +27,7 @@ var deleteNote = function(id) {
         method: "DELETE"
     });
 };
-
+//
 var renderActiveNote = function() {
     $saveNoteBtn.hide();
 
@@ -43,7 +43,7 @@ var renderActiveNote = function() {
         $noteText.val("");
     }
 };
-
+//
 var handleNoteSave = function() {
     var newNote = {
         title: $noteTitle.val(),
@@ -54,7 +54,7 @@ var handleNoteSave = function() {
     getAndRenderNotes();
     renderActiveNote();
 };
-
+//
 var handleNoteDelete = function(event) {
     event.stopPropagation();
 
@@ -68,17 +68,17 @@ var handleNoteDelete = function(event) {
     getAndRenderNotes();
     renderActiveNote();
 };
-
+//
 var handleNoteView = function() {
     activeNote = $(this).data();
     renderActiveNote();
 };
-
+//
 var handleNewNoteView = function() {
     activeNote = {};
     renderActiveNote();
 };
-
+//
 var handleRenderSaveBtn = function() {
     if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
         $saveNoteBtn.hide();
@@ -86,7 +86,7 @@ var handleRenderSaveBtn = function() {
         $saveNoteBtn.show();
     }
 };
-
+//
 var renderNoteList = function(notes) {
     $noteList.empty();
 
@@ -117,7 +117,7 @@ var getAndRenderNotes = function() {
 };
 
 $saveNoteBtn.on("click", handleNoteSave);
-$noteList.on("click", ".list-group-item, handleNoteView");
+$noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
